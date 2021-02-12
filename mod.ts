@@ -1,3 +1,4 @@
+// deno-lint-ignore-file camelcase
 /*
  * Reusable shapes for argument values
  */
