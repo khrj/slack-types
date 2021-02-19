@@ -6,7 +6,7 @@ export interface Dialog {
     title: string
     callback_id: string
     elements: {
-        type: 'text' | 'textarea' | 'select'
+        type: "text" | "textarea" | "select"
         name: string // shown to user
         label: string // shown to user
         optional?: boolean
@@ -16,9 +16,9 @@ export interface Dialog {
         max_length?: number
         min_length?: number
         hint?: string
-        subtype?: 'email' | 'number' | 'tel' | 'url'
+        subtype?: "email" | "number" | "tel" | "url"
         // type `select`:
-        data_source?: 'users' | 'channels' | 'conversations' | 'external'
+        data_source?: "users" | "channels" | "conversations" | "external"
         selected_options?: SelectOption[]
         options?: SelectOption[]
         option_groups?: {
@@ -34,7 +34,7 @@ export interface Dialog {
 
 export interface View {
     title?: PlainTextElement
-    type: 'home' | 'modal' | 'workflow_step'
+    type: "home" | "modal" | "workflow_step"
     blocks: (KnownBlock | Block)[]
     callback_id?: string
     close?: PlainTextElement
@@ -51,19 +51,19 @@ export interface View {
  */
 
 export interface ImageElement {
-    type: 'image'
+    type: "image"
     image_url: string
     alt_text: string
 }
 
 export interface PlainTextElement {
-    type: 'plain_text'
+    type: "plain_text"
     text: string
     emoji?: boolean
 }
 
 export interface MrkdwnElement {
-    type: 'mrkdwn'
+    type: "mrkdwn"
     text: string
     verbatim?: boolean
 }
@@ -80,7 +80,7 @@ export interface Confirm {
     text: PlainTextElement | MrkdwnElement
     confirm?: PlainTextElement
     deny?: PlainTextElement
-    style?: 'primary' | 'danger'
+    style?: "primary" | "danger"
 }
 
 /*
@@ -91,7 +91,11 @@ export interface Confirm {
 export type Select = UsersSelect | StaticSelect | ConversationsSelect | ChannelsSelect | ExternalSelect
 
 export type MultiSelect =
-    MultiUsersSelect | MultiStaticSelect | MultiConversationsSelect | MultiChannelsSelect | MultiExternalSelect
+    | MultiUsersSelect
+    | MultiStaticSelect
+    | MultiConversationsSelect
+    | MultiChannelsSelect
+    | MultiExternalSelect
 
 export interface Action {
     type: string
@@ -99,14 +103,14 @@ export interface Action {
 }
 
 export interface UsersSelect extends Action {
-    type: 'users_select'
+    type: "users_select"
     initial_user?: string
     placeholder?: PlainTextElement
     confirm?: Confirm
 }
 
 export interface MultiUsersSelect extends Action {
-    type: 'multi_users_select'
+    type: "multi_users_select"
     initial_users?: string[]
     placeholder?: PlainTextElement
     max_selected_items?: number
@@ -114,7 +118,7 @@ export interface MultiUsersSelect extends Action {
 }
 
 export interface StaticSelect extends Action {
-    type: 'static_select'
+    type: "static_select"
     placeholder?: PlainTextElement
     initial_option?: Option
     options?: Option[]
@@ -126,7 +130,7 @@ export interface StaticSelect extends Action {
 }
 
 export interface MultiStaticSelect extends Action {
-    type: 'multi_static_select'
+    type: "multi_static_select"
     placeholder?: PlainTextElement
     initial_options?: Option[]
     options?: Option[]
@@ -139,42 +143,42 @@ export interface MultiStaticSelect extends Action {
 }
 
 export interface ConversationsSelect extends Action {
-    type: 'conversations_select'
+    type: "conversations_select"
     initial_conversation?: string
     placeholder?: PlainTextElement
     confirm?: Confirm
     response_url_enabled?: boolean
     default_to_current_conversation?: boolean
     filter?: {
-        include?: ('im' | 'mpim' | 'private' | 'public')[]
+        include?: ("im" | "mpim" | "private" | "public")[]
         exclude_external_shared_channels?: boolean
         exclude_bot_users?: boolean
     }
 }
 
 export interface MultiConversationsSelect extends Action {
-    type: 'multi_conversations_select'
+    type: "multi_conversations_select"
     initial_conversations?: string[]
     placeholder?: PlainTextElement
     max_selected_items?: number
     confirm?: Confirm
     default_to_current_conversation?: boolean
     filter?: {
-        include?: ('im' | 'mpim' | 'private' | 'public')[]
+        include?: ("im" | "mpim" | "private" | "public")[]
         exclude_external_shared_channels?: boolean
         exclude_bot_users?: boolean
     }
 }
 
 export interface ChannelsSelect extends Action {
-    type: 'channels_select'
+    type: "channels_select"
     initial_channel?: string
     placeholder?: PlainTextElement
     confirm?: Confirm
 }
 
 export interface MultiChannelsSelect extends Action {
-    type: 'multi_channels_select'
+    type: "multi_channels_select"
     initial_channels?: string[]
     placeholder?: PlainTextElement
     max_selected_items?: number
@@ -182,7 +186,7 @@ export interface MultiChannelsSelect extends Action {
 }
 
 export interface ExternalSelect extends Action {
-    type: 'external_select'
+    type: "external_select"
     initial_option?: Option
     placeholder?: PlainTextElement
     min_query_length?: number
@@ -190,7 +194,7 @@ export interface ExternalSelect extends Action {
 }
 
 export interface MultiExternalSelect extends Action {
-    type: 'multi_external_select'
+    type: "multi_external_select"
     initial_options?: Option[]
     placeholder?: PlainTextElement
     min_query_length?: number
@@ -199,43 +203,43 @@ export interface MultiExternalSelect extends Action {
 }
 
 export interface Button extends Action {
-    type: 'button'
+    type: "button"
     text: PlainTextElement
     value?: string
     url?: string
-    style?: 'danger' | 'primary'
+    style?: "danger" | "primary"
     confirm?: Confirm
 }
 
 export interface Overflow extends Action {
-    type: 'overflow'
+    type: "overflow"
     options: Option[]
     confirm?: Confirm
 }
 
 export interface Datepicker extends Action {
-    type: 'datepicker'
+    type: "datepicker"
     initial_date?: string
     placeholder?: PlainTextElement
     confirm?: Confirm
 }
 
 export interface RadioButtons extends Action {
-    type: 'radio_buttons'
+    type: "radio_buttons"
     initial_option?: Option
     options: Option[]
     confirm?: Confirm
 }
 
 export interface Checkboxes extends Action {
-    type: 'checkboxes'
+    type: "checkboxes"
     initial_options?: Option[]
     options: Option[]
     confirm?: Confirm
 }
 
 export interface PlainTextInput extends Action {
-    type: 'plain_text_input'
+    type: "plain_text_input"
     placeholder?: PlainTextElement
     initial_value?: string
     multiline?: boolean
@@ -245,15 +249,22 @@ export interface PlainTextInput extends Action {
 }
 
 export interface DispatchActionConfig {
-    trigger_actions_on?: ('on_enter_pressed' | 'on_character_entered')[]
+    trigger_actions_on?: ("on_enter_pressed" | "on_character_entered")[]
 }
 
 /*
  * Block Types
  */
 
-export type KnownBlock = ImageBlock | ContextBlock | ActionsBlock | DividerBlock |
-    SectionBlock | InputBlock | FileBlock | HeaderBlock
+export type KnownBlock =
+    | ImageBlock
+    | ContextBlock
+    | ActionsBlock
+    | DividerBlock
+    | SectionBlock
+    | InputBlock
+    | FileBlock
+    | HeaderBlock
 
 export interface Block {
     type: string
@@ -261,46 +272,55 @@ export interface Block {
 }
 
 export interface ImageBlock extends Block {
-    type: 'image'
+    type: "image"
     image_url: string
     alt_text: string
     title?: PlainTextElement
 }
 
 export interface ContextBlock extends Block {
-    type: 'context'
+    type: "context"
     elements: (ImageElement | PlainTextElement | MrkdwnElement)[]
 }
 
 export interface ActionsBlock extends Block {
-    type: 'actions'
+    type: "actions"
     elements: (Button | Overflow | Datepicker | Select | RadioButtons | Checkboxes | Action)[]
 }
 
 export interface DividerBlock extends Block {
-    type: 'divider'
+    type: "divider"
 }
 
 export interface SectionBlock extends Block {
-    type: 'section'
+    type: "section"
     text?: PlainTextElement | MrkdwnElement // either this or fields must be defined
     fields?: (PlainTextElement | MrkdwnElement)[] // either this or text must be defined
-    accessory?: Button | Overflow | Datepicker | Select | MultiSelect | Action | ImageElement | RadioButtons | Checkboxes
+    accessory?:
+        | Button
+        | Overflow
+        | Datepicker
+        | Select
+        | MultiSelect
+        | Action
+        | ImageElement
+        | RadioButtons
+        | Checkboxes
 }
 
 export interface FileBlock extends Block {
-    type: 'file'
+    type: "file"
     source: string // 'remote'
     external_id: string
 }
 
 export interface HeaderBlock extends Block {
-    type: 'header'
+    type: "header"
     text: PlainTextElement
 }
 
 export interface InputBlock extends Block {
-    type: 'input'
+    type: "input"
     label: PlainTextElement
     hint?: PlainTextElement
     optional?: boolean
@@ -311,7 +331,7 @@ export interface InputBlock extends Block {
 export interface MessageAttachment {
     blocks?: (KnownBlock | Block)[]
     fallback?: string // either this or text must be defined
-    color?: 'good' | 'warning' | 'danger' | string
+    color?: "good" | "warning" | "danger" | string
     pretext?: string
     author_name?: string
     author_link?: string // author_name must be present
@@ -331,13 +351,13 @@ export interface MessageAttachment {
     ts?: string
     actions?: AttachmentAction[]
     callback_id?: string
-    mrkdwn_in?: ('pretext' | 'text' | 'fields')[]
+    mrkdwn_in?: ("pretext" | "text" | "fields")[]
 }
 
 export interface AttachmentAction {
     id?: string
     confirm?: Confirmation
-    data_source?: 'static' | 'channels' | 'conversations' | 'users' | 'external'
+    data_source?: "static" | "channels" | "conversations" | "users" | "external"
     min_query_length?: number
     name?: string
     options?: OptionField[]
@@ -346,9 +366,9 @@ export interface AttachmentAction {
         options: OptionField[]
     }[]
     selected_options?: OptionField[]
-    style?: 'default' | 'primary' | 'danger'
+    style?: "default" | "primary" | "danger"
     text: string
-    type: 'button' | 'select'
+    type: "button" | "select"
     value?: string
     url?: string
 }
