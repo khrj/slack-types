@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    viewBox="0 0 1200 800" width="1200" height="800">
+    
+    
+    <!-- ITEM 0 -->
+    <g>
+        <defs>
+            <clipPath id="clip-path-id-viewbox-item-0">
+                <rect x="0.0" y="0.0" width="100.0" height="100.0"/>
+            </clipPath>
+        </defs>
+        <g transform="translate(481.0 417.0) rotate(0.0 172.5 172.5) scale(3.45 3.45)">
+            <g clip-path="url(#clip-path-id-viewbox-item-0)" transform="translate(-0.0 -0.0)">
+                
+<circle fill="#eeeeee" cx="50" cy="50" r="50"></circle>
+
+            </g>
+        </g>
+    </g>
+    
+    <!-- ITEM 1 -->
+    <g>
+        <defs>
+            <clipPath id="clip-path-id-viewbox-item-1">
+                <rect x="0.0" y="0.0" width="143.864" height="124.59"/>
+            </clipPath>
+        </defs>
+        <g transform="translate(158.0 422.0) rotate(180.0 195.5 170.0) scale(2.717844631040427 2.728950959145999)">
+            <g clip-path="url(#clip-path-id-viewbox-item-1)" transform="translate(-0.0 -0.0)">
+                <title>triangle_1 copy 3</title><g id="Layer_2-i2" data-name="Layer 2"><g id="triangle_1_copy_3-i2" data-name="triangle_1 copy 3"><polygon points="71.932 0 0 124.59 143.864 124.59 71.932 0" fill="#23286b"></polygon></g></g>
+            </g>
+        </g>
+    </g>
+    
+    <!-- ITEM 2 -->
+    <g>
+        <defs>
+            <clipPath id="clip-path-id-viewbox-item-2">
+                <rect x="0.0" y="0.0" width="177.12" height="88.56"/>
+            </clipPath>
+        </defs>
+        <g transform="translate(678.0 88.0) rotate(200.14559332290153 181.0 91.5) scale(2.0438121047877145 2.0663956639566394)">
+            <g clip-path="url(#clip-path-id-viewbox-item-2)" transform="translate(-0.0 -0.0)">
+                <title>semicircle_1 copy 3</title><g id="Layer_2-i3" data-name="Layer 2"><g id="semicircle_1_copy_3-i3" data-name="semicircle_1 copy 3"><path d="M177.12,88.56H0a88.56,88.56,0,0,1,177.12,0Z" fill="#428dfc"></path></g></g>
+            </g>
+        </g>
+    </g>
+    
+    <!-- ITEM 3 -->
+    <g>
+        <defs>
+            <clipPath id="clip-path-id-viewbox-item-3">
+                <rect x="0.0" y="0.0" width="391.088" height="282.998"/>
+            </clipPath>
+        </defs>
+        <g transform="translate(410.0 98.0) rotate(0.0 277.0 200.0) scale(1.4165609786032811 1.413437550795412)">
+            <g clip-path="url(#clip-path-id-viewbox-item-3)" transform="translate(-0.0 -0.0)">
+                
+<path id="rounded_rectangle-i4" fill="#E94A47" d="M101.502,9.076L357.247,156.73c32.362,18.684,43.449,60.064,24.766,92.426l0,0  c-18.684,32.362-60.064,43.449-92.426,24.766L33.842,126.268C1.48,107.584-9.607,66.204,9.076,33.842l0,0  C27.76,1.48,69.141-9.608,101.502,9.076z"></path>
+
+            </g>
+        </g>
+    </g>
+    
+</svg>
